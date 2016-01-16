@@ -1,0 +1,126 @@
+html, body {
+	height: 100%;
+	font-family: Tahoma,Verdana,Segoe,sans-serif;
+}
+
+body {
+	background-color: #f5f5f5;
+	font-size: 16px;
+	margin-bottom: 80px;
+	padding: 0;
+	margin: 0;
+}
+
+.header {
+	height: 85px;
+	background-color: #6d0000; 
+	color: #f5f5f5;
+	padding-top: 10px;
+	font-family: "Brush Script MT",cursive;
+	margin-bottom: 30px;
+	box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.3);
+}
+.header h2 {
+	margin-top: 5px;
+	margin-bottom: 4px;
+}
+.header h3 {
+	margin-top: 0px;
+	color: #f5f5f5;
+}
+.header span {
+	margin-top: 15px;
+	color: #f5f5f5;
+	font-weight: bold;
+	cursor: pointer;
+}
+.header span:hover {
+	color: #fff;
+}
+
+.img-center {
+	display: block;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+.margin-bot {
+	margin-bottom: 20px;
+}
+.full-width {
+	width: 100%;
+}
+
+input.form-control {
+	width: 60%;
+	margin: 0 auto;
+	border-radius: 20px;
+	color: #6d0000;
+	border-color: #6d0000;
+}
+
+.product-btn {
+	padding: 3px 7px;
+}
+.load-btn {
+	padding: 6px;
+	width: 200px;
+	margin: 20px auto 10px;
+	display: block;
+	font-weight: bold;
+}
+.product-btn, .load-btn {
+	border: solid 2px #6d0000;
+	background-color: #f5f5f5;
+	color: #6d0000;
+}
+.product-btn:hover, .load-btn:hover {
+	background-color: #fff;
+}
+
+.product {
+	margin-top: 50px;
+}
+.product-info {
+	width: 90%;
+	margin: 10px auto;
+}
+
+.btn-row {
+	margin: 10px 0;
+	border-bottom: 1px solid gray;
+}
+.btn-row a {
+	display: block;
+	margin: 10px auto 20px;
+	width: 120px;
+}
+.btn-row a:hover {
+	color: #6d0000;
+}
+
+.grid-img {
+	width: 100%;
+	cursor: pointer;
+}
+
+.progress {
+	margin: 30px 0 5px;
+}
+
+.done {
+	text-align: center;
+	margin: 30px 0;
+	color: #6d0000;
+	font-weight: bold;
+}
+
+@media (max-width: 767px) and (min-width: 550px) {
+	.btn-row a {
+		width: 200px;
+		padding-left: 45px;
+	}
+}
+
+@media (max-width: 767px) {
+
+}

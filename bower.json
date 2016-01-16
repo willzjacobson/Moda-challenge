@@ -1,0 +1,18 @@
+{
+  "name": "challenge",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "https://github.com/willzjacobson/Moda-challenge",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngModal": "~1.2.2"
+  }
+}

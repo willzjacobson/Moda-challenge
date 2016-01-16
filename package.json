@@ -1,0 +1,32 @@
+{
+  "name": "challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willzjacobson/Moda-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willzjacobson/Moda-challenge/issues"
+  },
+  "homepage": "https://github.com/willzjacobson/Moda-challenge#readme",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-ui-router": "^0.2.15",
+    "body-parser": "^1.14.2",
+    "bootstrap": "^3.3.6",
+    "chalk": "^1.1.1",
+    "express": "^4.13.3",
+    "jquery": "^2.2.0",
+    "jquery-ui": "^1.10.5",
+    "nodemon": "^1.8.1",
+    "request": "^2.67.0"
+  }
+}

@@ -1,0 +1,40 @@
+<header home="home"></header>
+
+<div class="container margin-bot">
+	<div class="row">
+		<div class="col-sm-7">
+			<img class="full-width" src="{{product.images[0].src}}">
+		</div>
+		<div class="col-sm-5">
+			<div class="row btn-row">
+				<div class="col-xs-6">
+					<a class="product-btn" href="http://www.amazon.com{{product.url}}">
+						<span class="glyphicon glyphicon-shopping-cart">Checkout</span>
+					</a>
+				</div><!-- .col-md-6 -->
+				<div class="col-xs-6">
+					<a class="product-btn" href="http://www.amazon.com{{product.reviews.url}}">
+						<span class="glyphicon glyphicon-shopping-cart">Checkout</span>
+					</a>
+				</div><!-- .col-md-6 -->
+
+			</div><!-- .row -->
+			<h2 class="margin-bot">{{product.title}}</h2>
+			<h4>By {{product.byline}}</h4>
+			<p>Price: {{getPrice(product)}}</p>
+
+			<div class="progress">
+				<div class="progress-bar progress-bar-success" role="progressbar" style="width: {{product.reviews.hoverText.slice(0,3)/.05}}%"></div>
+			</div>
+			<p>Rated {{product.reviews.hoverText}} <br> from {{product.reviews.numberOfRatings}} ratings</p>
+			<!-- <p>from {{product.reviews.numberOfRatings}} ratings</p> -->
+		</div>
+	</div>
+	
+</div>
+
+
+
+<!-- - The product display page should have an instagram like layout with the: product image, name, price, ratings, alt images, etc
+- The checkout button should link to the product page on amazon
+- Sharing a product to Instagram/Twitter shares the product image and name -->

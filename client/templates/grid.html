@@ -1,0 +1,42 @@
+<header home="home"></header>
+
+<div class="container">
+
+	<form>
+		<div class="form-group">
+			<input type="text" class="form-control" ng-model="desired.title" placeholder="Filter by Product Name">
+		</div>
+	</form>
+
+	<div class="row" >
+	    <div class="product col-sm-4 .col-xs-6" ng-repeat-start="product in products | filter : desired">
+	    	<div class="row product-info">
+	    		<div class="col-md-6">
+		        	<img class="grid-img" ng-click="showModal=true" src={{product.images[0].src}}>
+		        </div><!-- .col-xs-6 -->
+		        <div class="col-md-6">
+			        <p>{{product.title.slice(0, 50)}}
+			        <span ng-show="product.title.length>50">...</span></p>
+			        <p>{{getPrice(product)}}</p>
+			        <button ui-sref="product({productId: product.asin})" class="product-btn">See More</button>
+		        </div><!-- .col-xs-6 -->
+	        </div><!-- .row -->
+	    </div><!-- .col-sm-4 .col-xs-6-->
+
+		<modal-dialog show='showModal' dialog-title='{{product.title}}'>
+			<h4>By {{product.byline}} <span class="pull-right">Price: {{getPrice(product)}}</span></h4>
+			<img class="img-center" src={{product.images[0].src}}>
+		</modal-dialog>
+
+	    <div class="clearfix" ng-if="$index%3==2"></div>
+	    <div ng-repeat-end=""></div>
+	</div><!-- .row -->
+
+	<button ng-show="loadCount<3" ng-click="enableLoading()" class="load-btn">Load More</button>
+
+	<p class="done" ng-show="loadCount>3"><span class="glyphicon glyphicon-alert"></span> You have perused it all!</p>
+
+
+</div><!-- .container -->
+
+
