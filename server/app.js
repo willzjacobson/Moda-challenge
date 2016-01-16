@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json 
 app.use(bodyParser.json())
 
-app.listen(3001, function() {
+app.listen(process.env.PORT, function() {
 	console.log(chalk.magenta('El equipo servidor esta oyendo en el puerto tres mil y uno'));
 })
 
