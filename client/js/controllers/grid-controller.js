@@ -1,11 +1,11 @@
 app.controller('GridCtrl', function($scope, initialProducts, ProductFactory) {
 
-	$scope.home = true;
+	$scope.home = true; // for header directive
 	$scope.products = initialProducts;
+	// keeping track of which product id's to query next
 	$scope.loadCount = ($scope.products.length - 12)/3;
 	var nextLoadIndex = $scope.products.length;
 	var jWindow = $(window); // for performance
-	console.log($scope.products[0]);
 
 	$scope.getPrice = ProductFactory.getPrice;
 
