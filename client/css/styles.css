@@ -55,22 +55,43 @@ input.form-control {
 	border-color: #6d0000;
 }
 
+.img-container {
+	height: 250px;
+	overflow: hidden;
+	padding: 0;
+	margin-top: 50px;
+	position: relative;
+}
 .grid-img {
 	width: 100%;
 	cursor: pointer;
-	margin-bottom: 8px;
-	cursor: pointer;
 }
-.grid-img:hover {
-	opacity: 0.7;
+.img-container:hover .grid-img {
+	opacity: 0.1;
 }
 
-.product {
-	margin-top: 50px;
+td {
+	width: 33%;
 }
 .product-info {
 	width: 90%;
-	margin: 10px auto;
+}
+.img-container:hover .absolute {
+	display: inline-block;
+}
+
+.absolute {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	display: none;
+	cursor: pointer;
+}
+
+.eighteen {
+	font-size: 18px;
+	margin: 10px;
+	font-weight: bold;
 }
 
 .btn-row {
@@ -96,13 +117,16 @@ input.form-control {
 
 /* Links and Buttons */
 
+.product-btn {
+	margin-top: 10px;
+}
 .product-btn, .twitter {
 	padding: 3px 7px;
 }
 .load-btn {
 	padding: 6px;
 	width: 200px;
-	margin: 20px auto 10px;
+	margin: 30px auto 10px;
 	display: block;
 	font-weight: bold;
 }
@@ -136,5 +160,14 @@ input.form-control {
 }
 
 @media (max-width: 767px) {
-
+	.eighteen {
+		font-size: 14px;
+	}
+	.absolute {
+		top: 0px;
+		left: 0px;
+	}
+	.img-container {
+		height: 170px;
+	}
 }

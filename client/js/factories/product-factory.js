@@ -5,6 +5,18 @@ app.factory('ProductFactory', function($http) {
 
 	var productMethods = {};
 
+	// Need to do this so can easily nest ng-repeats in GridCtrl
+	function groupByThree(arr) {
+		var master = [];
+		for (var i = 0; i < arr.length; i+=3) {
+			master.push([arr[i], arr[i+1], arr[i+2]]);
+		}
+		var remains = arr.slice(arr.length-arr.length%3);
+		if (remains.length) master.push(remains);
+		console.log(master)
+		return master;
+	}
+
 	// To render price
 	productMethods.getPrice = function(product) {
 		return $(product.price).html();
@@ -15,7 +27,7 @@ app.factory('ProductFactory', function($http) {
 		if (productsCache.length) return productsCache;
 		return $http.post('/products', {start: 0, end: 11})
 		.then(function(res) {
-			productsCache = res.data.p;
+			productsCache = groupByThree(res.data.p);
 			return productsCache;
 		});
 	}
@@ -24,7 +36,7 @@ app.factory('ProductFactory', function($http) {
 	productMethods.fetchMoreProducts = function(startIndex, endIndex) {
 		return $http.post('/products', {start: startIndex, end: endIndex})
 		.then(function(res) {
-			productsCache = productsCache.concat(res.data.p);
+			productsCache = productsCache.concat([res.data.p]);
 			return productsCache;
 		});
 	}

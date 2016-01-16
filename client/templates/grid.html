@@ -8,25 +8,32 @@
 		</div>
 	</form>
 
-	<div class="row">
-	    <div class="product col-sm-4 .col-xs-6" ng-repeat-start="product in products | filter : desired">
-	    	<div class="row product-info">
-	        	<img class="grid-img" ng-click="showModal=true" src={{product.images[0].src}}>
-		        <p>{{product.title.slice(0, 40)}}
-		        <span ng-show="product.title.length>40">...</span></p>
-		        <p>{{getPrice(product)}}</p>
-		        <button ui-sref="product({productId: product.asin})" class="product-btn">See More</button>
-	        </div><!-- .row -->
-	    </div><!-- .col-sm-4 .col-xs-6-->
+	<table>
+		<tr ng-repeat="group in products">
+			<td ng-repeat="product in group | filter : desired">
+				<div class="product-info">
+					<div class="img-container">
+		        		<img class="grid-img" ng-click="showModal=true" src={{product.images[0].src}}>
 
-		<modal-dialog show='showModal' dialog-title='{{product.title}}'>
-			<h4>By {{product.byline}} <span class="pull-right">Price: {{getPrice(product)}}</span></h4>
-			<img class="img-center" src={{product.images[0].src}}>
-		</modal-dialog>
+		        		<div ng-click="showModal=true" class="absolute">
+					        <p class="eighteen">{{product.title.slice(0, 40)}}
+					        <span ng-show="product.title.length>40">...</span></p>
+					        <p class="eighteen">Price: {{getPrice(product)}}</p>
+						</div>
 
-	    <div class="clearfix" ng-if="$index%3==2"></div>
-	    <div ng-repeat-end=""></div>
-	</div><!-- .row -->
+		        	</div>
+
+		        	<button ui-sref="product({productId: product.asin})" class="product-btn">See More</button>
+
+		        	<modal-dialog show='showModal' dialog-title='{{product.title}}'>
+						<h4>By {{product.byline}} <span class="pull-right">Price: {{getPrice(product)}}</span></h4>
+						<img class="img-center" src={{product.images[0].src}}>
+					</modal-dialog>
+
+		        </div>
+			</td>
+		</tr>
+	</table>
 
 	<button ng-show="loadCount<3" ng-click="enableLoading()" class="load-btn">Load More</button>
 
